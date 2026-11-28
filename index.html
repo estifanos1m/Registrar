@@ -3,6 +3,96 @@
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f3f5f9;color:#172033;font:15px system-ui,-apple-system,Segoe UI,sans-serif}button,input,select{font:inherit}button{border:0;border-radius:9px;padding:10px 14px;background:#315ee8;color:white;font-weight:650;cursor:pointer}.secondary{background:#e9efff;color:#315ee8}.danger{background:#fff0f0;color:#bd3434}.muted{color:#738096}.hidden{display:none!important}.auth{max-width:410px;margin:9vh auto;background:white;padding:28px;border-radius:16px;box-shadow:0 8px 35px #18294a12}.auth input{margin:7px 0}.layout{display:grid;grid-template-columns:225px 1fr;min-height:100vh}.side{background:#172554;color:white;padding:22px 15px}.logo{font-size:25px;font-weight:800;margin:3px 10px 28px}.nav{display:grid;gap:7px}.nav button{text-align:left;background:transparent;color:#cbd5e1}.nav button.active,.nav button:hover{background:#314477;color:white}.main{padding:26px;max-width:1350px;width:100%;margin:auto}.top,.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.top h1{margin:0;font-size:26px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:18px}.card,.panel{background:white;border:1px solid #e7ebf2;border-radius:14px;padding:17px;box-shadow:0 3px 12px #17203308}.metric{font-size:27px;font-weight:800;margin-top:7px}.panel{margin-bottom:17px}.panel h2{font-size:17px;margin:0 0 14px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:14px 0}.formgrid label{font-size:12px;color:#66748b;display:grid;gap:5px}input,select{width:100%;padding:10px;border:1px solid #dce2ec;border-radius:9px;background:white;color:#172033}.wide{grid-column:1/-1}.tools{display:flex;gap:8px;flex-wrap:wrap}.tools input{max-width:230px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th,td{text-align:left;padding:11px 9px;border-bottom:1px solid #edf0f5;font-size:13px}th{color:#748097}.empty{padding:22px;text-align:center;color:#8290a5}.notice{background:#fff5d9;color:#725300;border-radius:9px;padding:11px;margin:12px 0;font-size:13px}.reminder{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;margin:8px 0;border:1px solid #e5eaf2;border-radius:10px;background:#f8fafc}.reminder.overdue{background:#fff0f0;border-color:#efaaaa;color:#b42318}.reminder.overdue .muted{color:#b42318}.reminder-actions{display:flex;gap:7px;flex-wrap:wrap}.reminder-actions button{padding:7px 10px;font-size:12px}.reminder.overdue button{background:#b42318;color:white}.reminder .secondary{background:#e9efff;color:#315ee8}@media(max-width:520px){.reminder{align-items:flex-start;flex-direction:column}}
 @media(max-width:900px){html,body{width:100%;max-width:100%;overflow-x:hidden}.layout{display:block;width:100%;min-width:0}.side{width:100%;min-width:0;padding:12px;position:sticky;top:0;z-index:2}.logo{margin:3px 8px 9px;font-size:21px}.nav{display:flex;gap:5px;width:100%;min-width:0;overflow-x:auto;overscroll-behavior-x:contain}.nav button{flex:0 0 auto;white-space:nowrap;padding:9px 11px}.main{padding:15px;width:100%;min-width:0;max-width:100%;margin:0}.page,.panel,.cards,.card{min-width:0;max-width:100%}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.card{overflow-wrap:anywhere}.top{flex-wrap:wrap}.top>div{min-width:0}}@media(max-width:470px){.formgrid{grid-template-columns:1fr}.wide{grid-column:auto}.top h1{font-size:22px}.card{padding:13px}.metric{font-size:23px}.bar{align-items:flex-start;flex-direction:column}}
+
+/* Registrar visual refresh: navy, slate blue and warm gold */
+:root{
+  --reg-navy:#172554;--reg-blue:#315ee8;--reg-gold:#d6a642;
+  --reg-bg:#eaf0f8;--reg-ink:#182641;--reg-muted:#71809a;
+}
+html,body{background:var(--reg-bg);color:var(--reg-ink)}
+body{
+  background:
+    radial-gradient(850px 360px at 85% -130px,rgba(77,117,190,.19),transparent 70%),
+    linear-gradient(145deg,#edf2fa 0%,#e7edf6 55%,#f2f0e9 100%);
+}
+.side{
+  background:linear-gradient(180deg,#172554 0%,#1e3568 58%,#243f70 100%);
+  box-shadow:5px 0 22px rgba(23,37,84,.12);
+  border-right:1px solid rgba(255,255,255,.08);
+}
+.logo{color:#fff;letter-spacing:-.04em}
+.logo:after{
+  content:"";display:block;width:38px;height:3px;margin-top:9px;
+  border-radius:9px;background:linear-gradient(90deg,#e7bd61,#f4d993);
+}
+.nav button{border-radius:10px;transition:background .16s ease,color .16s ease}
+.nav button.active,.nav button:hover{
+  background:linear-gradient(100deg,rgba(255,255,255,.17),rgba(255,255,255,.07));
+  color:#fff;box-shadow:inset 3px 0 #e5bd62;
+}
+.main{color:var(--reg-ink)}
+.top{padding-bottom:14px;border-bottom:1px solid rgba(91,115,153,.17)}
+.top h1{color:#192b50;letter-spacing:-.035em}
+.muted{color:var(--reg-muted)}
+.card,.panel{
+  background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(246,249,254,.98));
+  border:1px solid #dce5f1;border-radius:16px;
+  box-shadow:0 5px 18px rgba(34,56,91,.065),inset 0 1px 0 rgba(255,255,255,.9);
+}
+.panel{position:relative}
+.panel h2{color:#20365f;letter-spacing:-.015em}
+.cards .card{position:relative;overflow:hidden;min-height:105px}
+.cards .card:after{
+  content:"";position:absolute;right:-19px;top:-25px;width:78px;height:78px;
+  border-radius:50%;background:rgba(66,105,174,.075);
+}
+.cards .card:nth-child(4n+1){background:linear-gradient(140deg,#f7faff,#eaf1fc);border-color:#d7e3f5}
+.cards .card:nth-child(4n+2){background:linear-gradient(140deg,#f8f9ff,#eeeffb);border-color:#dfe0f2}
+.cards .card:nth-child(4n+3){background:linear-gradient(140deg,#fffaf0,#f8f0dd);border-color:#eee2c5}
+.cards .card:nth-child(4n){background:linear-gradient(140deg,#f1faf8,#e5f3f0);border-color:#d2e8e1}
+.metric{color:#203d70;letter-spacing:-.035em}
+.cards .card:nth-child(4n+3) .metric{color:#9a6b16}
+.cards .card:nth-child(4n) .metric{color:#247765}
+button{
+  background:linear-gradient(135deg,#3769e8,#294fc0);
+  border-radius:10px;box-shadow:0 3px 8px rgba(49,94,232,.15);
+  transition:transform .15s ease,filter .15s ease,box-shadow .15s ease;
+}
+button:active{transform:translateY(1px);filter:brightness(.97);box-shadow:none}
+.secondary{
+  background:#e7edf8;color:#294b91;border:1px solid #d5e0f1;box-shadow:none;
+}
+.danger{background:#fff0ef;color:#b53d3d;border:1px solid #f1d3d0;box-shadow:none}
+input,select{
+  background:#fbfcff;border:1px solid #d5deeb;border-radius:10px;color:#1b2b47;
+}
+input:focus,select:focus{
+  outline:none;border-color:#6d8fe0;box-shadow:0 0 0 3px rgba(49,94,232,.11);
+}
+.formgrid label{color:#586b8b;font-weight:650}
+th{background:#f0f4fa;color:#586b85;font-weight:700}
+th,td{border-bottom:1px solid #e5ebf3}
+tr:hover td{background:#f7f9fd}
+.notice{background:#fff6df;color:#765719;border:1px solid #f0dfb4}
+.reminder{
+  background:linear-gradient(110deg,#f5f8fd,#edf3fb);
+  border-color:#dce6f3;border-radius:12px;
+}
+.reminder.overdue{background:#fff0ef;border-color:#efc4c1;color:#a92e2a}
+.reminder-actions .secondary{background:#e7edf8;color:#294b91}
+.empty{color:#8290a5}
+.auth{
+  background:linear-gradient(145deg,#fff,#f2f6fd);
+  border:1px solid #dce5f1;border-radius:19px;
+  box-shadow:0 14px 40px rgba(27,47,82,.11);
+}
+.auth h1{color:#1b3260}
+a{color:#315ee8}
+@media(max-width:900px){
+  .side{box-shadow:0 5px 18px rgba(23,37,84,.13)}
+  .nav button.active,.nav button:hover{box-shadow:inset 0 -3px #e5bd62}
+}
+
 </style></head><body>
 <div id="loading" class="auth"><h1>Registrar</h1><p class="muted">Loading your account…</p></div><div id="auth" class="auth hidden"><h1>Registrar</h1><p class="muted">Sign in to manage your own student records.</p><div id="authMsg" class="notice hidden"></div><form id="authForm"><input id="email" type="email" placeholder="Email address" required><input id="password" type="password" minlength="6" placeholder="Password" required><button id="authButton" style="width:100%">Sign in</button></form><p class="muted" style="font-size:13px">First time? <a href="#" id="switchAuth">Create your account</a></p></div>
 <div id="app" class="layout hidden"><aside class="side"><div class="logo">Registrar</div><nav class="nav"><button class="active" data-page="dashboard">▦ Dashboard</button><button data-page="students">♙ Students</button><button data-page="teachers">♧ Teachers</button><button data-page="payments">＄ Payments</button><button data-page="reports">▤ Reports</button></nav></aside>
